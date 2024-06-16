@@ -37,7 +37,7 @@ export function useRefreshAccessToken() {
       removeAccessToken();
       removeRefreshToken();
       setUserLoading(false);
-      navigate(lastVisitedRoute || "/login");
+      navigate("/login");
     }
   }
 
