@@ -2,17 +2,30 @@ export type UserType = {
   sub: string;
   email: string;
   userName: string;
-  field: string;
+  field: UserStudyField;
   stars: number;
+  role: UserRole;
   studyRole: UserStudyRole;
   joinedAt: number;
 };
 
+export type UserRole = "user" | "admin";
+
 export type UserStudyRole = "student" | "teacher";
+
+export type UserStudyField = "law";
+
+export type LevelType = {
+  _id: string;
+  title: string;
+  field: UserStudyField;
+  studyRole: UserStudyRole;
+};
 
 export type UnitType = {
   _id: string;
   title: string;
+  studyRole: UserStudyRole;
 };
 
 export type TopicType = {
@@ -49,7 +62,7 @@ export type TaskQuestionType = {
   body: string;
   options: string[];
   answerType: TopicQuestionAnswerType;
-  topicId: string;
+  taskId: string;
   rightAnswerId: string;
 };
 

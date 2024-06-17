@@ -3,7 +3,6 @@ import { useRefreshAccessToken } from "@/hooks/auth/use-refresh-access-token";
 import CreateAccount from "@/pages/createAccount";
 import Dashboard from "@/pages/dashboard";
 import Leaderboard from "@/pages/leaderboard";
-import Learn from "@/pages/learn";
 import Login from "@/pages/login";
 import Profile from "@/pages/profile";
 import Settings from "@/pages/settings";
@@ -13,6 +12,7 @@ import PrivateRoute from "./auth/privateRoute";
 import useAuthStore from "@/features/auth";
 import Unit from "@/pages/unit";
 import Topic from "@/pages/topic";
+import Learn from "@/pages/learn";
 
 export default function AppRouter() {
   const { refreshAccessToken } = useRefreshAccessToken();

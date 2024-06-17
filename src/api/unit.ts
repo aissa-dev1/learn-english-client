@@ -4,25 +4,8 @@ import { UserStudyRole } from "@/features/types";
 
 class UnitService {
   async findUnits(studyRole: UserStudyRole, accessToken: string) {
-    if (studyRole === "student") return this.findStudentUnits(accessToken);
-    return this.findTeacherUnits(accessToken);
-  }
-
-  async findStudentUnits(accessToken: string) {
     const axiosRes = await axios.get(
-      `${import.meta.env.VITE_API_URL}/units/student`,
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    );
-    return axiosRes;
-  }
-
-  async findTeacherUnits(accessToken: string) {
-    const axiosRes = await axios.get(
-      `${import.meta.env.VITE_API_URL}/units/teacher`,
+      `${import.meta.env.VITE_API_URL}/units/${studyRole}`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,

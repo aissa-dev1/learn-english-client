@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CreateTopicData } from "./types";
+import { CreateTopicData, CreateTopicDefinitionData } from "./types";
 
 class TopicService {
   async findOne(id: string, accessToken: string) {
@@ -41,6 +41,19 @@ class TopicService {
   async createOne(data: CreateTopicData, accessToken: string) {
     const axiosRes = await axios.post(
       `${import.meta.env.VITE_API_URL}/topics`,
+      data,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return axiosRes;
+  }
+
+  async createDefinition(data: CreateTopicDefinitionData, accessToken: string) {
+    const axiosRes = await axios.post(
+      `${import.meta.env.VITE_API_URL}/definitions`,
       data,
       {
         headers: {

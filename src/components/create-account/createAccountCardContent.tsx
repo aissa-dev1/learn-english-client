@@ -14,7 +14,7 @@ import AuthCardItem from "../auth/authCardItem";
 import { Switch } from "../ui/switch";
 import { useCreateAccount } from "@/hooks/auth/use-create-account";
 import Loader from "../loader";
-import { UserStudyRole } from "@/features/types";
+import { UserStudyField, UserStudyRole } from "@/features/types";
 
 export default function CreateAccountCardContent() {
   const { createAccountData, setCreateAccountData, createAccount } =
@@ -78,7 +78,10 @@ export default function CreateAccountCardContent() {
         <Select
           value={createAccountData.field}
           onValueChange={(value) => {
-            setCreateAccountData((prev) => ({ ...prev, field: value }));
+            setCreateAccountData((prev) => ({
+              ...prev,
+              field: value as UserStudyField,
+            }));
           }}
         >
           <SelectTrigger>

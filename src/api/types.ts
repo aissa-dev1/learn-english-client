@@ -1,4 +1,4 @@
-import { UserStudyRole } from "@/features/types";
+import { TopicQuestionAnswerType, UserStudyRole } from "@/features/types";
 
 export type CreateAccountData = {
   email: string;
@@ -23,12 +23,34 @@ export type LogoutData = {
 
 export type CreateUnitData = {
   title: string;
+  studyRole: UserStudyRole;
 };
 
 export type CreateTopicData = {
   title: string;
   description: string;
   unitId: string;
+};
+
+export type CreateTopicDefinitionData = {
+  title: string;
+  description: string;
+  examples: string[];
+  topicId: string;
+};
+
+export type CreateTopicTaskData = {
+  title: string;
+  description: string;
+  topicId: string;
+};
+
+export type CreateTaskQuestionData = {
+  body: string;
+  answerType: TopicQuestionAnswerType;
+  options: string[];
+  taskId: string;
+  rightAnswerBody: string;
 };
 
 export type UpdateUserNameData = {

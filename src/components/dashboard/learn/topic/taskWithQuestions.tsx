@@ -10,9 +10,11 @@ export default function TaskWithQuestions({
 }: Props) {
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="text-sm font-semibold lg:text-xl">
-        {title} {description}
-      </h3>
+      <div className="flex items-center justify-between">
+        <h3 className="text-sm font-semibold lg:text-xl">
+          {title} {description}
+        </h3>
+      </div>
       <Questions list={questions} />
     </div>
   );

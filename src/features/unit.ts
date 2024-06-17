@@ -16,11 +16,14 @@ interface Actions {
   setUnitsLoading(loading: boolean): void;
   updateTopics(topics: TopicType[]): void;
   setTopicsLoading(loading: boolean): void;
+  createUnit(data: UnitType): void;
+  createTopic(data: TopicType): void;
 }
 
 const useUnitStore = create<State & Actions>((set) => ({
   _id: "",
   title: "",
+  studyRole: "student",
   loading: false,
   units: [],
   unitsLoading: false,
@@ -44,6 +47,18 @@ const useUnitStore = create<State & Actions>((set) => ({
   },
   setTopicsLoading(loading) {
     set((state) => ({ ...state, topicsLoading: loading }));
+  },
+  createUnit(data) {
+    set((state) => {
+      const updatedUnits = [...state.units, data];
+      return { ...state, units: updatedUnits };
+    });
+  },
+  createTopic(data) {
+    set((state) => {
+      const updatedTopics = [...state.topics, data];
+      return { ...state, topics: updatedTopics };
+    });
   },
 }));
 

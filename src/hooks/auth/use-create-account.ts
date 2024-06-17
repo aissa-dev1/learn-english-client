@@ -1,6 +1,6 @@
 import { authService } from "@/api/auth";
 import { useToast } from "@/components/ui/use-toast";
-import { UserStudyRole } from "@/features/types";
+import { UserStudyField, UserStudyRole } from "@/features/types";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +8,7 @@ interface Data {
   email: string;
   password: string;
   userName: string;
-  field: string;
+  field: UserStudyField;
   studyRole: UserStudyRole;
   termsAgree: boolean;
   loading: boolean;
