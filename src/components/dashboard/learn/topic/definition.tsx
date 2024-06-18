@@ -20,7 +20,11 @@ interface Props extends TopicDefinitionType {}
 export default function Definition({ title, description, examples }: Props) {
   return (
     <div className="flex flex-col gap-4">
-      {title && <CardTitle className="text-xl lg:text-3xl">{title}</CardTitle>}
+      {title && (
+        <CardTitle className="text-xl text-center lg:text-3xl lg:text-left">
+          {title}
+        </CardTitle>
+      )}
       {description && (
         <CardDescription className="text-sm lg:text-xl">
           {description}

@@ -11,7 +11,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/dashboard/learn");
+      navigate("/dashboard/levels");
     } else navigate("/login");
   }, []);
 

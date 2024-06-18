@@ -7,10 +7,10 @@ interface Props extends UnitType {}
 
 export default function UnitCard({ _id, title }: Props) {
   return (
-    <Card className="flex items-center justify-between px-6 text-white shadow-lg bg-slate-500 h-28">
+    <Card className="flex flex-col gap-8 px-4 py-6 text-white shadow-lg bg-gradient-to-r from-teal-400 to-teal-500 lg:gap-0 lg:flex-row lg:items-center lg:justify-between lg:h-28">
       <CardTitle className="text-lg font-semibold">{title}</CardTitle>
-      <Link to={`/dashboard/learn/units/${_id}`}>
-        <Button className="text-slate-100 bg-slate-600 hover:bg-slate-700">
+      <Link to={`/dashboard/learn/units/${_id}`} className="w-full lg:w-fit">
+        <Button className="w-full text-white bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700">
           Explore
         </Button>
       </Link>

@@ -19,7 +19,7 @@ export function useGetUnit() {
       updateUnit(axiosRes.data.unit);
       setUnitLoading(false);
     } catch (error) {
-      navigate("/dashboard/learn");
+      navigate("/dashboard/levels");
     }
   }
 

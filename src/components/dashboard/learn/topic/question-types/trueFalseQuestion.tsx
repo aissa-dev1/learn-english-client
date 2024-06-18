@@ -1,7 +1,7 @@
 import Loader from "@/components/loader";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardTitle } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -75,13 +75,9 @@ function QuestionDialog({ _id, body }: Props) {
 
 export default function TrueFalseQuestion(props: Props) {
   return (
-    <Card>
-      <CardHeader>
-        <div className="flex items-center justify-between">
-          <CardTitle>{props.body}</CardTitle>
-          <QuestionDialog {...props} />
-        </div>
-      </CardHeader>
+    <Card className="flex flex-col gap-4 px-4 py-6 lg:flex-row lg:items-center lg:justify-between">
+      <CardTitle>{props.body}</CardTitle>
+      <QuestionDialog {...props} />
     </Card>
   );
 }

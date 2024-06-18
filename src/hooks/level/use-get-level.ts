@@ -19,7 +19,7 @@ export function useGetLevel() {
       updateLevel(axiosRes.data.level);
       setLevelLoading(false);
     } catch (error) {
-      navigate("/dashboard/learn");
+      navigate("/dashboard/levels");
     }
   }
 

@@ -27,10 +27,11 @@ export default function Learn() {
   return (
     <>
       <Container className="flex flex-col gap-4 pb-24 mt-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-center justify-center gap-4 lg:flex-row lg:justify-between lg:gap-0">
           <PageTitle>Learn</PageTitle>
           <div className="flex items-center gap-4">
             <Badge>{userField}</Badge>
+            <Badge>A1</Badge>
             <StarComponent stars={userStars} />
           </div>
         </div>

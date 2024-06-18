@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardTitle } from "@/components/ui/card";
 import {
   Drawer,
   DrawerClose,
@@ -38,7 +38,7 @@ function QuestionDrawer({ body }: Props) {
             }}
           />
         </DrawerHeader>
-        <DrawerFooter>
+        <DrawerFooter className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-2">
           <Button>Submit</Button>
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>
@@ -51,13 +51,9 @@ function QuestionDrawer({ body }: Props) {
 
 export default function DefineQuestion(props: Props) {
   return (
-    <Card>
-      <CardHeader>
-        <div className="flex items-center justify-between">
-          <CardTitle>{props.body}</CardTitle>
-          <QuestionDrawer {...props} />
-        </div>
-      </CardHeader>
+    <Card className="flex flex-col gap-4 px-4 py-6 lg:flex-row lg:items-center lg:justify-between">
+      <CardTitle>{props.body}</CardTitle>
+      <QuestionDrawer {...props} />
     </Card>
   );
 }

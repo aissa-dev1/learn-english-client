@@ -19,7 +19,7 @@ export function useGetTopic() {
       updateTopic(axiosRes.data.topic);
       setTopicLoading(false);
     } catch (error) {
-      navigate("/dashboard/learn");
+      navigate("/dashboard/levels");
     }
   }
 

@@ -13,6 +13,7 @@ import useAuthStore from "@/features/auth";
 import Unit from "@/pages/unit";
 import Topic from "@/pages/topic";
 import Learn from "@/pages/learn";
+import Levels from "@/pages/levels";
 
 export default function AppRouter() {
   const { refreshAccessToken } = useRefreshAccessToken();
@@ -39,6 +40,7 @@ export default function AppRouter() {
         <Route path="/dashboard/profile" element={<Profile />} />
         <Route path="/dashboard/leaderboard" element={<Leaderboard />} />
         <Route path="/dashboard/settings" element={<Settings />} />
+        <Route path="/dashboard/levels" element={<Levels />} />
         <Route path="/dashboard/learn" element={<Learn />} />
         <Route path="/dashboard/learn/units/:id" element={<Unit />} />
         <Route
