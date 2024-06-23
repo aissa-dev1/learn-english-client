@@ -1,3 +1,4 @@
+import Loader from "@/components/loader";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
 import {
@@ -10,6 +11,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
+import { useSubmitUserAnswer } from "@/hooks/user-answer/use-submit-user-answer";
 import { useState } from "react";
 
 interface Props {
@@ -18,8 +20,9 @@ interface Props {
   rightAnswerId: string;
 }
 
-function QuestionDrawer({ body }: Props) {
+function QuestionDrawer({ _id, body }: Props) {
   const [answer, setAnswer] = useState("");
+  const { submitUserAnswertData, submitUserAnswer } = useSubmitUserAnswer();
 
   return (
     <Drawer>
@@ -39,7 +42,17 @@ function QuestionDrawer({ body }: Props) {
           />
         </DrawerHeader>
         <DrawerFooter className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-2">
-          <Button>Submit</Button>
+          <Button
+            onClick={async () => {
+              await submitUserAnswer(answer, _id);
+            }}
+          >
+            {submitUserAnswertData.loading ? (
+              <Loader childClassName="border-white" />
+            ) : (
+              "Submit"
+            )}
+          </Button>
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>
           </DrawerClose>
